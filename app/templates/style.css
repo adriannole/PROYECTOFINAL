@@ -1,4 +1,6 @@
 
+
+
 * {
     padding: 0%;
     margin: 0%;
@@ -12,10 +14,10 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #B1B0B5;
+    background: linear-gradient(rgba(191, 224, 247, 0.863), rgb(145, 145, 145)), url('/app/templates/img/fondo.jpg');
     background-size: cover;
-
 }
+
 
 .mi-imagen {
     background-image: url('/app/templates/img/LOGO.png');
@@ -104,3 +106,53 @@ margin: 10px;
 .icons{
     margin: 15px 0;
 }
+
+.icons {
+    border-radius: 0%;
+    padding: 5px;
+    cursor: pointer;
+    margin: 0%;
+    color: #d4d7de;
+    transition: background-color 0.3s ease;
+   
+   
+}
+
+.formu { 
+    margin: 30px 0 0 0;
+}
+.formu label { 
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    padding: 0 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+   
+}
+.formu label input {
+    width: 100%;
+    padding: 10px;
+    background-color: #F7F6F0;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: #3b4a6b; 
+}
+.formu input[type="submit"]{
+background-color: darkgrey;
+color: #F7F6F0;
+border-radius: 20px;
+border: none;
+padding: 10px 15px;
+cursor: pointer;
+margin-top: 10px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+.formu input[type="submit"]:hover{
+background-color: #3b4a6b;
+
+
+}
+
+
