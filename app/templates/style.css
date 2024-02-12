@@ -1,0 +1,96 @@
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif; 
+
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(img/FP.jpg);
+    background-size: cover;
+    
+
+}
+
+.container-form {
+display: flex;
+border-radius: 20px;
+box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
+height: 500px;
+max-width: 900px;
+transition: all 1s ease;
+margin: 10px;
+
+
+}
+.information {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    text-align: end;
+    background-color: #d4d7de;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+   
+}
+.info-childs{
+    width: 100%;
+    padding: 0 20px;
+
+}
+.info-childs h2 {
+    font-size: 2.5rem;
+    
+}
+
+.info-childs p {
+    margin: 15px 0;
+    color: #3b4a6b;
+}
+
+.info-childs input {
+    background-color: transparent;
+    outline: none;
+    border:solid 2px #3b4a6b;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #3b4a6b;
+    cursor: pointer;
+    transition: background-color .3s ease;
+
+}
+.info-childs input:hover {
+    background-color: #3b4a6b;
+    border: none;
+    color: #d4d7de;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+
+}
+.form-information{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    text-align: center;
+    background-color: #F7F6F0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+   
+}
+.form-information-childs{
+    padding: 0 30px;
+
+}
+.form-information-childs h2{ 
+    color: #3b4a6b;
+    font-size: 2rem;
+}
+.icons{
+    margin: 15px 0;
+}
