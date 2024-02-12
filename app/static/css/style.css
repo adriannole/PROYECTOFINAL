@@ -154,6 +154,10 @@ background-color: #3b4a6b;
 
 
 }
+.hide{
+    position: absolute;
+    transform: translateY(-300%);
+}
 
 
 /*RESPONSIVE FORM */ 
