@@ -14,13 +14,13 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(rgba(191, 224, 247, 0.863), rgb(145, 145, 145)), url('/app/templates/img/fondo.jpg');
+    background: linear-gradient(rgba(191, 224, 247, 0.863), rgb(145, 145, 145)), url('/app/static/img/fondo.jpg');
     background-size: cover;
 }
 
 
 .mi-imagen {
-    background-image: url('/app/templates/img/LOGO.png');
+    background-image: url('/app/static/img/LOGO.png');
     background-size: cover; /* o puedes usar 'contain' según tus necesidades */
 
     width: 341px; /* Ancho deseado de la imagen */
