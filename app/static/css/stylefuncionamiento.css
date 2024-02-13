@@ -16,14 +16,14 @@ body {
 }
 .img {
 
-    background-image: url('/app/templates/img/TEXTC.png');
+    background-image: url('/app/static/img/TEXTC.png');
     background-size: cover; /* o puedes usar 'contain' según tus necesidades */     width: 206px; /* Ancho deseado de la imagen */
     height: 123px; /* Alto deseado de la imagen */
     margin: 0; /* Eliminar márgenes */
     background-position: right 10px top; /* Mover la imagen hacia la derecha */
 }
 .logimg {
-    background-image: url('/app/templates/img/LOGO.png');
+    background-image: url('/app/static/img/LOGO.png');
     background-size: cover; /* o puedes usar 'contain' según tus necesidades */
 
     width: 341px; /* Ancho deseado de la imagen */

@@ -14,7 +14,7 @@ body {
 	
 }
 .image-container {
-    background-image: url('/app/templates/img/LOGO.png');
+    background-image: url('/app/static/img/LOGO.png');
     background-size: cover; /* o puedes usar 'contain' según tus necesidades */
 
     width: 341px; /* Ancho deseado de la imagen */
