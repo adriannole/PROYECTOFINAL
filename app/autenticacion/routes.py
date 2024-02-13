@@ -11,4 +11,4 @@ def register():
     usuario = Usuario(nombres_completos, correo, contraseña)
     agregar_usuario(usuario)
 
-    return redirect(url_for('Index'))
+    return redirect(url_for('/templates/Index.html'))
