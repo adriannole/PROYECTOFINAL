@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Mostrar el primer texto al cargar la página
   showText(currentIndex);
 
-  // Cambiar automáticamente el texto cada 3 segundos después del primer cambio
+  // Cambiar automáticamente el texto cada 5 segundos después del primer cambio
   setInterval(() => {
       toggleText();
   }, 5000);
