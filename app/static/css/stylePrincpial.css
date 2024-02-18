@@ -1,97 +1,97 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: sans-serif;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  h1 {
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  .imagen-principal {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .imagen-principal img {
-    max-width: 100%;
-  }
-  
-  .texto-principal {
-    margin-bottom: 20px;
-  }
-  
-  .texto-principal h2 {
-    margin-bottom: 10px;
-  }
-  
-  .texto-principal p {
-    margin-bottom: 10px;
-  }
-  
-  .seccion-botones {
-    text-align: center;
-  }
-  
-  .boton {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    color: #333;
-    margin: 5px;
-  }
-  
-  footer {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  /* Añadir estilos para las nuevas secciones */
-  
-  .seccion-emocion {
-    margin-bottom: 20px;
-  }
-  
-  .seccion-emocion h3 {
-    margin-bottom: 10px;
-  }
-  
-  .seccion-emocion select {
-    padding: 5px;
-    font-size: 16px;
-  }
-  
-  .seccion-camara {
-    border: 1px solid #ddd;
-    padding: 10px;
-  }
-  
-  .seccion-camara h2 {
-    margin-bottom: 10px;
-  }
-  
-  .seccion-camara .video {
-    width: 100%;
-    height: 300px;
-  }
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  height: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.logo-container img {
+  width: 186px;
+  height: 73px;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-column, .center-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-container img, .robot-container img, .image-container img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.profile-container img {
+  width: 200px;
+  height: 200px;
+}
+
+.robot-container img {
+  width: 188px;
+  height: 173px;
+}
+
+.image-container img {
+  width: 688px;
+  height: 461px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.timer {
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+}
+
+.cancel {
+  background-color: #007bff;
+}
+
+.finish {
+  background-color: #4caf50;
+}
+
+.voice-button {
+  background-color: #3182ce;
+}

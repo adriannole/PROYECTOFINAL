@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/app/static/css/stylePrincpial.css">
-  <title>Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Layout</title>
+
+<link rel="stylesheet" href="/app/static/css/stylePrincpial.css">
+<script src="/app/static/js/scriptPrincipal.js"></script>   
 </head>
 <body>
-    <header>
-      <h1>Título</h1>
-    </header>
-    <main>
-      <section class="imagen-principal">
-        <img src="imagen.jpg" alt="Imagen principal">
-      </section>
-      <section class="texto-principal">
-        <h2>Texto principal</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet orci eget diam ultricies ultrices. Nunc velit risus, ultricies sit amet orci nec, ultricies elementum risus. Nunc ac ante mauris. Nulla facilisi. Maecenas sit amet neque eget eros luctus ultrices. Nam eget lacus eget eros ultricies vehicula. Nunc tincidunt risus eget enim ultricies, eu lobortis massa feugiat.</p>
-      </section>
-      <section class="seccion-botones">
-        <button class="boton">Botón 1</button>
-        <button class="boton">Botón 2</button>
-      </section>
-      <section class="seccion-emocion">
-        <h3>¿Qué nivel de incomodidad experimenta al visualizar la imagen proporcionada en esta representación visual?</h3>
-        <select name="emocion">
-          <option value="ansiedad">Ansiedad</option>
-          <option value="miedo">Miedo</option>
-          <option value="asco">Asco</option>
-          <option value="tristeza">Tristeza</option>
-          <option value="otra">Otra</option>
-        </select>
-      </section>
-      <section class="seccion-camara">
-        <h2>VIDEO EN VIVO</h2>
-        <div class="video">
-          </div>
-      </section>
-    </main>
-    <footer>
-      <p>Pie de página</p>
-    </footer>
-  </body>
-  </html>
+
+<div class="main-container">
+  <div class="header">
+    <div class="logo-container">
+      <img src="https://placehold.co/186x73" alt="Logo image description">
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="left-column">
+      <div class="profile-container">
+        <img src="https://placehold.co/200x200" alt="Profile image description">
+      </div>
+      <div class="status">
+        <img src="https://placehold.co/20x20" alt="Status icon">
+        <span>CONTENTO</span>
+      </div>
+      <div class="timer" id="timer">00:00:01</div>
+      <button class="button cancel">CANCELAR</button>
+    </div>
+    
+    <div class="center-column">
+      <div class="test-title">TEST PERSONALIDAD</div>
+      <div class="test-question">QUE INTERPRETA EN ESTA IMAGEN</div>
+      <div class="image-container">
+        <img src="https://placehold.co/688x461" alt="Test image description">
+      </div>
+      <button class="button voice-button">ICONO INTERACTIVO DE VOZ</button>
+    </div>
+
+    <div class="right-column">
+      <div class="robot-container">
+        <img src="https://placehold.co/188x173" alt="Robot image description">
+      </div>
+      <button class="button finish">Finalizar →</button>
+    </div>
+  </div>
+</div>
+
+
+</body>
 </html>
