@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var imageContainer = document.querySelector('.image-container img');
     if (imageContainer) {
       imageContainer.src = images[currentImageIndex];
+      // Aquí podrías llamar a una función de detección de emociones, pasándole la imagen actual como argumento
+      detectEmotion(images[currentImageIndex]);
     } else {
       console.error('Image container not found.');
     }
@@ -36,5 +38,43 @@ document.addEventListener('DOMContentLoaded', (event) => {
     voiceButton.addEventListener('click', changeImage);
   } else {
     console.error('Voice button not found.');
+  }
+
+  // Función para iniciar la cámara web
+  function startWebcam() {
+    const constraints = {
+      video: true
+    };
+    const profileContainer = document.querySelector('.profile-container');
+    if (!profileContainer) {
+      console.error('Profile container not found.');
+      return;
+    }
+    const existingImage = profileContainer.querySelector('img');
+    if (existingImage) {
+      existingImage.remove();
+    }
+    const video = document.createElement('video');
+    video.setAttribute('autoplay', '');
+    video.setAttribute('playsinline', '');
+    profileContainer.appendChild(video);
+    navigator.mediaDevices.getUserMedia(constraints)
+      .then((stream) => {
+        video.srcObject = stream;
+      })
+      .catch((error) => {
+        console.error('Error accessing the webcam', error);
+      });
+  }
+
+  startWebcam();
+
+  // Esquema básico para la función de detección de emociones
+  // Deberás reemplazar esto con la integración de una biblioteca de reconocimiento de emociones real
+  function detectEmotion(imageUrl) {
+    // Imagina que esta función analiza la imagen y detecta emociones
+    console.log(`Detecting emotion for image: ${imageUrl}`);
+    // Aquí iría el código para invocar una API de reconocimiento de emociones o usar una biblioteca JS
+    // Por ejemplo, podría actualizar algún elemento en la página con la emoción detectada.
   }
 });
