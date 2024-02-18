@@ -5,18 +5,32 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #f0f0f0;
   height: 100%;
 }
 
 
+
+
+
+
 .main-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 94vh;
   align-items: center;
-  justify-content: space-between; /* Ensure space between header, content, and footer */
+  justify-content: flex-start; /* Alinea elementos al principio */
+
+}
+
+ .test-title {
+  font-size: 30px;
+  display: flex;
+  justify-content: left;
+  width: 100%; /* Full width to use space effectively */
+  padding: 20px;
+
 }
 
 .header {
@@ -35,15 +49,30 @@ body, html {
 
 
 .content {
-  display: flex;
-  width: 100%; /* Full width to use space effectively */
-  padding: 0 20px;
-  justify-content: space-around; /* Space elements evenly */
-  align-items: center;
-  flex-grow: 1; /* Grow to use available space */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Divide en tres columnas */
+  grid-template-rows: auto 1fr auto; /* Tres filas: contenido superior, fila central flexible, contenido inferior */
+  gap: 20px ; /* Espacio entre columnas y filas */
+  width: 100%;
+  padding: 20px;
+  align-items: start /* Alinea el contenido al inicio de cada celda */
 }
 
+.left-column {
+  grid-column: 1; /* Coloca en la primera columna */
+  grid-row: 1 / span 2; /* Extiende desde la primera fila a través de dos filas */
+}
 
+.center-column {
+  grid-column: 2; /* Coloca en la segunda columna */
+  grid-row: 1; /* Coloca en la primera fila */
+}
+
+.right-column {
+  grid-column: 3; /* Coloca en la tercera columna */
+  grid-row: 3; /* Coloca en la tercera fila, es decir, debajo de las demás */
+  
+}
 
 
 
@@ -115,7 +144,7 @@ body, html {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 0px;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for aesthetics */
 }
 
