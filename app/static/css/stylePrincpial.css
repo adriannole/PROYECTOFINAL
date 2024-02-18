@@ -10,6 +10,7 @@ body, html {
   height: 100%;
 }
 
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -22,7 +23,8 @@ body, html {
   display: flex;
   justify-content: flex-end;
   width: 100%; /* Full width to align logo to the right */
-  padding: 20px;
+  margin: 4px;
+  padding: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for aesthetics */
 }
 
@@ -30,6 +32,7 @@ body, html {
   width: 186px;
   height: 73px;
 }
+
 
 .content {
   display: flex;
@@ -39,6 +42,11 @@ body, html {
   align-items: center;
   flex-grow: 1; /* Grow to use available space */
 }
+
+
+
+
+
 
 .left-column, .center-column, .right-column {
   display: flex;
@@ -110,3 +118,4 @@ body, html {
   padding: 20px;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for aesthetics */
 }
+
