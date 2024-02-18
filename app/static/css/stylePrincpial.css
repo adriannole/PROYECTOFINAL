@@ -70,7 +70,7 @@ body, html {
 
 .right-column {
   grid-column: 3; /* Coloca en la tercera columna */
-  grid-row: 3; /* Coloca en la tercera fila, es decir, debajo de las demás */
+  grid-row: 1; /* Coloca en la tercera fila, es decir, debajo de las demás */
   
 }
 
