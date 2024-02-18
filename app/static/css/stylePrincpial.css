@@ -6,7 +6,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
-  background-color: #f0f0f0;
+  background: linear-gradient(rgba(191, 224, 247, 0.863), rgb(145, 145, 145)), url('../img/fondo.jpg');
   height: 100%;
 }
 
@@ -40,7 +40,6 @@ body, html {
   height: 73px;
 }
 
-
 .content {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Divide en tres columnas */
@@ -66,9 +65,6 @@ body, html {
   grid-row: 1; /* Coloca en la tercera fila, es decir, debajo de las demás */
   
 }
-
-
-
 
 .left-column, .center-column, .right-column {
   display: flex;
