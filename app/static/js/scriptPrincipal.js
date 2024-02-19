@@ -33,39 +33,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  let voiceButton = document.querySelector('.voice-button');
-  if (voiceButton) {
-    voiceButton.addEventListener('click', changeImage);
-  } else {
-    console.error('Voice button not found.');
-  }
-
-  // Función para iniciar la cámara web
-  function startWebcam() {
-    const constraints = {
-      video: true
-    };
-    const profileContainer = document.querySelector('.profile-container');
-    if (!profileContainer) {
+// Función para iniciar la cámara web
+function startWebcam() {
+  const constraints = {
+      video: {
+          width: { exact: 200 }, // Establece el ancho exacto de la cámara
+          height: { exact: 200 } // Establece la altura exacta de la cámara
+      }
+  };
+  const profileContainer = document.querySelector('.profile-container');
+  if (!profileContainer) {
       console.error('Profile container not found.');
       return;
-    }
-    const existingImage = profileContainer.querySelector('img');
-    if (existingImage) {
+  }
+  const existingImage = profileContainer.querySelector('img');
+  if (existingImage) {
       existingImage.remove();
-    }
-    const video = document.createElement('video');
-    video.setAttribute('autoplay', '');
-    video.setAttribute('playsinline', '');
-    profileContainer.appendChild(video);
-    navigator.mediaDevices.getUserMedia(constraints)
+  }
+  const video = document.createElement('video');
+  video.setAttribute('autoplay', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('width', '200'); // Ajusta el ancho del video
+  video.setAttribute('height', '200'); // Ajusta la altura del video
+  profileContainer.appendChild(video);
+  navigator.mediaDevices.getUserMedia(constraints)
       .then((stream) => {
-        video.srcObject = stream;
+          video.srcObject = stream;
       })
       .catch((error) => {
-        console.error('Error accessing the webcam', error);
+          console.error('Error accessing the webcam', error);
       });
-  }
+}
+
 
   startWebcam();
 
@@ -77,4 +76,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Aquí iría el código para invocar una API de reconocimiento de emociones o usar una biblioteca JS
     // Por ejemplo, podría actualizar algún elemento en la página con la emoción detectada.
   }
+
+  const btnStartRecord = document.getElementById('btnStartRecord');
+  const btnStopRecord = document.getElementById('btnStopRecord');
+  const btnPlayText = document.getElementById('btnPlayText'); // Corregido el ID del botón
+  const texto = document.getElementById('texto');
+  
+  let recognition = new webkitSpeechRecognition();
+  recognition.lang = 'es-MX'; // Cambiado el idioma a español latinoamericano
+  recognition.continuous = true;
+  recognition.interimResults = false;
+  
+  recognition.onresult = (event) => {
+    const results = event.results;
+    const frase = results[results.length - 1][0].transcript;
+    texto.value += frase;
+  }
+  recognition.onend = (event) => {
+    console.log('El micro deja de escuchar');
+  }
+  
+  recognition.onerror = (event) => {
+    console.log(event.error);
+  }
+  
+  btnStartRecord.addEventListener('click', () => {
+    recognition.start();
+  });
+  btnStopRecord.addEventListener('click', () => {
+    recognition.abort();
+  });
+  btnplayText.addEventListener('click', () => { // Corregido el nombre del botón
+    LeerTexto(texto.value);
+  });
+  
+  function LeerTexto(texto) {
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = texto;
+    speech.volume = 1;
+    speech.rate = 1;
+    speech.pitch = 1;
+  
+    window.speechSynthesis.speak(speech);
+  }
+  
 });

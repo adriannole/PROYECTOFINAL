@@ -6,6 +6,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+  #texto {
+    font-family: 'Montserrat', sans-serif; /* Aplicar la fuente Montserrat */
+  }
+</style>
 <title>Interactive Layout</title>
 
 <link rel="stylesheet" href="/app/static/css/stylePrincpial.css">
@@ -39,10 +45,13 @@
       <div class="image-container">
         <img src="https://placehold.co/688x461" alt="Test image description">
       </div>
+      <textarea id="texto" cols="30" rows="10"></textarea>
       <div class="footer2">
-        <input type="button" value="Voz del Usuario" onclick="animateContainer()" class="button voice-button">
-
+        <button id="btnStartRecord" class="button">Comenzar Grabación</button>
+        <button id="btnStopRecord" class="button">Terminar Grabación</button>
+        <button id="btnplayText" class="button">REPRODUCIR</button>
       </div>
+      
     </div>
 
     <div class="right-column">
