@@ -33,13 +33,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  let voiceButton = document.querySelector('.voice-button');
-  if (voiceButton) {
-    voiceButton.addEventListener('click', changeImage);
-  } else {
-    console.error('Voice button not found.');
-  }
-
   // Función para iniciar la cámara web
   function startWebcam() {
     const constraints = {
@@ -77,4 +70,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Aquí iría el código para invocar una API de reconocimiento de emociones o usar una biblioteca JS
     // Por ejemplo, podría actualizar algún elemento en la página con la emoción detectada.
   }
+
+  const btnStartRecord = document.getElementById('btnStartRecord');
+  const btnStopRecord = document.getElementById('btnStopRecord');
+  const btnPlayText = document.getElementById('btnPlayText'); // Corregido el ID del botón
+  const texto = document.getElementById('texto');
+  
+  let recognition = new webkitSpeechRecognition();
+  recognition.lang = 'es-MX'; // Cambiado el idioma a español latinoamericano
+  recognition.continuous = true;
+  recognition.interimResults = false;
+  
+  recognition.onresult = (event) => {
+    const results = event.results;
+    const frase = results[results.length - 1][0].transcript;
+    texto.value += frase;
+  }
+  recognition.onend = (event) => {
+    console.log('El micro deja de escuchar');
+  }
+  
+  recognition.onerror = (event) => {
+    console.log(event.error);
+  }
+  
+  btnStartRecord.addEventListener('click', () => {
+    recognition.start();
+  });
+  btnStopRecord.addEventListener('click', () => {
+    recognition.abort();
+  });
+  btnplayText.addEventListener('click', () => { // Corregido el nombre del botón
+    LeerTexto(texto.value);
+  });
+  
+  function LeerTexto(texto) {
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = texto;
+    speech.volume = 1;
+    speech.rate = 1;
+    speech.pitch = 1;
+  
+    window.speechSynthesis.speak(speech);
+  }
+  
 });

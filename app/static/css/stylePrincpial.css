@@ -112,49 +112,40 @@ p {
 	margin-bottom: 20px;
 }
 
-
-
-
 .footer2 {
   width: 100%;
   display: flex;
   justify-content: space-around;
   padding: 0 100px;
   margin: 0 auto;
-
 }
 
 .footer2 h2 {
   font-size: 2.5rem;
-  
 }
+
 .footer2 p {
   margin: 20px 0;
   color: #3b4a6b;
 }
-.footer2 input {
+
+.button {
   background-color: transparent;
   outline: none;
-  border:solid 2px #3b4a6b;
+  border: solid 2px #3b4a6b;
   border-radius: 50px;
   padding: 10px 50px;
   color: #3b4a6b;
   cursor: pointer;
   transition: background-color .3s ease;
-
 }
-.footer2 input:hover {
+
+.button:hover {
   background-color: #3b4a6b;
   border: none;
   color: #d4d7de;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
 }
-
-
-
-
-
-
 
 .footer{
   width: 100%;
