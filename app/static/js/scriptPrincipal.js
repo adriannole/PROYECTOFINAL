@@ -33,32 +33,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  // Función para iniciar la cámara web
-  function startWebcam() {
-    const constraints = {
-      video: true
-    };
-    const profileContainer = document.querySelector('.profile-container');
-    if (!profileContainer) {
+// Función para iniciar la cámara web
+function startWebcam() {
+  const constraints = {
+      video: {
+          width: { exact: 200 }, // Establece el ancho exacto de la cámara
+          height: { exact: 200 } // Establece la altura exacta de la cámara
+      }
+  };
+  const profileContainer = document.querySelector('.profile-container');
+  if (!profileContainer) {
       console.error('Profile container not found.');
       return;
-    }
-    const existingImage = profileContainer.querySelector('img');
-    if (existingImage) {
+  }
+  const existingImage = profileContainer.querySelector('img');
+  if (existingImage) {
       existingImage.remove();
-    }
-    const video = document.createElement('video');
-    video.setAttribute('autoplay', '');
-    video.setAttribute('playsinline', '');
-    profileContainer.appendChild(video);
-    navigator.mediaDevices.getUserMedia(constraints)
+  }
+  const video = document.createElement('video');
+  video.setAttribute('autoplay', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('width', '200'); // Ajusta el ancho del video
+  video.setAttribute('height', '200'); // Ajusta la altura del video
+  profileContainer.appendChild(video);
+  navigator.mediaDevices.getUserMedia(constraints)
       .then((stream) => {
-        video.srcObject = stream;
+          video.srcObject = stream;
       })
       .catch((error) => {
-        console.error('Error accessing the webcam', error);
+          console.error('Error accessing the webcam', error);
       });
-  }
+}
+
 
   startWebcam();
 
