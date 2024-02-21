@@ -1,43 +1,64 @@
-/* General Container Styles */
-.container {
-    border: 1px solid #000;
-    margin: 10px;
-    padding: 10px;
+/* Reset some default styles */
+body, p {
+    margin: 0;
+    padding: 0;
 }
 
-/* Box Styles */
-.box {
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f5f5f5;
+  /* Main container styling */
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-/* Specific ID Styles for finer control */
-#profile-container {
-    /* Styles specific to the profile container */
+  /* Column styling */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-#test-results-container {
-    /* Styles specific to the test results container */
+  /* Left and Right columns */
+.left, .right {
+    width: 20%;
 }
 
-#bot-container {
-    /* Styles specific to the bot container */
+  /* Center column */
+.center {
+    width: 40%;
 }
 
-/* Button Styles */
-button {
+  /* Subcontainer styling */
+.subcontainer {
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+
+  /* Last subcontainer in the right column */
+.subcontainer.last {
+    background-color: #ccc;
+}
+
+  /* Button styling */
+.buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
     background-color: #007bff;
     color: white;
-    border: none;
     padding: 10px 20px;
-    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    display: block;
-    width: 100%;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
+  /* Add any additional styles you need here */
