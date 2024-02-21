@@ -17,8 +17,8 @@ def registro():
         contraseña = request.form['contraseña']
         nuevo_usuario = Usuario(nombre, correo, contraseña)
         agregar_usuario(nuevo_usuario)
-        return redirect(url_for('Index'))
-    return render_template('registro.html')
+        return redirect(url_for('index'))
+    return render_template('Index.html')
 
 @app.route('/inicio_sesion', methods=['GET', 'POST'])
 def inicio_sesion():
