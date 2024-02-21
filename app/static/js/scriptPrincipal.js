@@ -79,7 +79,6 @@ function startWebcam() {
 
   const btnStartRecord = document.getElementById('btnStartRecord');
   const btnStopRecord = document.getElementById('btnStopRecord');
-  const btnPlayText = document.getElementById('btnPlayText'); // Corregido el ID del botón
   const texto = document.getElementById('texto');
   
   let recognition = new webkitSpeechRecognition();
@@ -106,18 +105,5 @@ function startWebcam() {
   btnStopRecord.addEventListener('click', () => {
     recognition.abort();
   });
-  btnplayText.addEventListener('click', () => { // Corregido el nombre del botón
-    LeerTexto(texto.value);
-  });
-  
-  function LeerTexto(texto) {
-    const speech = new SpeechSynthesisUtterance();
-    speech.text = texto;
-    speech.volume = 1;
-    speech.rate = 1;
-    speech.pitch = 1;
-  
-    window.speechSynthesis.speak(speech);
-  }
   
 });

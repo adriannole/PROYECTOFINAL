@@ -112,6 +112,25 @@ p {
 	margin-bottom: 20px;
 }
 
+.textarea-container {
+  width: 688px;
+  height: 135px;
+  margin: 20px auto; /* Ajusta el margen según lo desees */
+}
+
+#texto {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: 2px solid #3b4a6b; /* Ajusta el borde según lo desees */
+  border-radius: 8px; /* Ajusta el radio del borde según lo desees */
+  resize: none; /* Evita que el usuario redimensione el textarea */
+  justify-content: space-around;
+  padding: 10px;
+  margin: 0 ;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for aesthetics */
+}
+
 .footer2 {
   width: 100%;
   display: flex;
@@ -125,7 +144,7 @@ p {
 }
 
 .footer2 p {
-  margin: 20px 0;
+  margin: 5px 0;
   color: #3b4a6b;
 }
 
@@ -134,7 +153,7 @@ p {
   outline: none;
   border: solid 2px #3b4a6b;
   border-radius: 50px;
-  padding: 10px 50px;
+  padding: 10px 60px;
   color: #3b4a6b;
   cursor: pointer;
   transition: background-color .3s ease;
