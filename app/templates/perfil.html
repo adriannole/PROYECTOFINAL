@@ -1,145 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Currículum Vitae</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        button[type="button"],
-        button[type="submit"] {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button[type="button"]:hover,
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        #disclaimer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #888;
-        }
-
-        #disclaimer a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        #disclaimer a:hover {
-            text-decoration: underline;
-        }
-
-        #plugins {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            color: #888;
-        }
-
-        #header {
-            float: left;
-            margin-right: 20px;
-        }
-
-        #header img {
-            width: 150px;
-            height: auto;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Resultados del Test de Personalidad</title>
+    <link rel="stylesheet" href="/app/static/css/styleperfil.css">
+    <script src="/app/static/js/scriptperfil.js"></script> 
 </head>
 <body>
 
-    <div class="container">
-        
-        <h1>Currículum Vitae</h1>
-        <div id="header">
-            <img src="placeholder.jpg" alt="Foto de perfil">
-        </div>
-	<form>
-            <label for="fullname">Nombre Completo:</label><br>
-            <input type="text" id="fullname" name="fullname" value="Emily Johnson"><br>
-            
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" value="emily.johnson@example.com"><br>
-            
-            <label for="address">Dirección:</label><br>
-            <input type="text" id="address" name="address" value="123 Calle Principal, Ciudad, País"><br>
-            
-            <label for="phone">Teléfono:</label><br>
-            <input type="tel" id="phone" name="phone" value="123-456-7890"><br>
-            
-            <label for="summary">Resumen:</label><br>
-            <textarea id="summary" name="summary">Desarrollador web con experiencia en HTML, CSS y JavaScript. Apasionado por la creación de experiencias digitales atractivas y funcionales.</textarea><br>
-            
-            <label for="experience">Experiencia Laboral:</label><br>
-            <textarea id="experience" name="experience">Desarrollador Web - ABC Solutions (2019 - Presente)
-- Desarrollo y mantenimiento de sitios web utilizando HTML, CSS y JavaScript.
-- Colaboración con equipos de diseño y marketing para implementar nuevas características y funcionalidades.</textarea><br>
-            
-            <label for="education">Educación:</label><br>
-            <textarea id="education" name="education">Licenciatura en Informática - Universidad XYZ (2015 - 2019)
-- Especialización en Desarrollo de Software.</textarea><br>
-            
-            <label for="skills">Habilidades:</label><br>
-            <textarea id="skills" name="skills">HTML, CSS, JavaScript, Responsive Design, Git, Adobe Creative Suite</textarea><br>
-            
-            <button type="submit" id="save">Guardar Currículum</button><br>
-            
-            <p id="disclaimer">Toda la información proporcionada es precisa y veraz. Consulta nuestra <a href="/privacy-notice">Política de Privacidad</a>.</p>
-        </form>
-        
-        <p id="plugins">88 Plugins 40</p>
+    <!-- Profile Container -->
+    <div id="profile-container" class="container">
+        <!-- Profile Recommendations -->
+        <div id="profile-recommendations" class="box">contenedor de recomendaciones</div>
+        <!-- Profile Videos -->
+        <div id="profile-videos" class="box">contenedor de videos</div>
+        <!-- Profile Goals -->
+        <div id="profile-goals" class="box">contenedor de metas</div>
     </div>
 
-    <script>
-        // Asegúrate de cambiar 'placeholder.jpg' a la ruta correcta de tu imagen de perfil.
-    </script>
+    <!-- Test Results Container -->
+    <div id="test-results-container" class="container">
+        <div id="client-data-container" class="box">contenedor de datos del cliente</div>
+        <div id="preliminary-test-container" class="box">contenedor de test preliminar</div>
+        <div id="diagnostic-container" class="box">contenedor de diagnostico</div>
+        <div id="skills-container" class="box">contenedor de destrezas</div>
+        <button id="download-results">DESCARGAR RESULTADOS</button>
+    </div>
+
+    <!-- Bot Container -->
+    <div id="bot-container" class="container">
+        <div id="chatbot-container" class="box">contenedor del bot</div>
+        <button id="chatbot-button">BOTÓN</button>
+        <div id="image-container" class="box">CONTAINER imagen</div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

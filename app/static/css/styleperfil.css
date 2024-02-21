@@ -1,0 +1,43 @@
+/* General Container Styles */
+.container {
+    border: 1px solid #000;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Box Styles */
+.box {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+/* Specific ID Styles for finer control */
+#profile-container {
+    /* Styles specific to the profile container */
+}
+
+#test-results-container {
+    /* Styles specific to the test results container */
+}
+
+#bot-container {
+    /* Styles specific to the bot container */
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
