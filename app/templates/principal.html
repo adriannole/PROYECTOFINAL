@@ -17,54 +17,54 @@
 <link rel="stylesheet" href="/app/static/css/stylePrincpial.css">
 <script src="/app/static/js/scriptPrincipal.js"></script>   
 </head>
+
 <body>
-
-<div class="main-container">
-  <div class="header">
-    <div class="test-title">TEST PERSONALIDAD</div>
-    <div class="logo-container">
-      <img src="/app/static/img/TEXTC.png" alt="Logo image">
+  <div class="main-container">
+    <div class="header">
+      <div class="test-title">TEST PERSONALIDAD</div>
+      <div class="logo-container">
+        <img src="/app/static/img/TEXTC.png" alt="Logo image">
+      </div>
     </div>
-  </div>
 
-  <div class="content">
-    <div class="left-column">
-      <div class="profile-container">
-        <img src="https://placehold.co/200x200" alt="Profile image description">
+    <div class="content">
+      <div class="left-column">
+        <div class="profile-container">
+          <img src="https://placehold.co/200x200" alt="Profile image description">
+        </div>
+        <div class="status">
+          <img src="https://placehold.co/20x20" alt="Status icon">
+          <span>CONTENTO</span>
+        </div>
+        <div class="timer" id="timer">00:00:01</div>
+        
       </div>
-      <div class="status">
-        <img src="https://placehold.co/20x20" alt="Status icon">
-        <span>CONTENTO</span>
-      </div>
-      <div class="timer" id="timer">00:00:01</div>
       
-    </div>
+      <div class="center-column">
+        <div class="test-question">QUE INTERPRETA EN ESTA IMAGEN</div>
+        <div class="image-container">
+          <img src="https://placehold.co/688x461" alt="Test image description">
+        </div>
+        <div class="textarea-container">
+        <textarea id="texto" cols="93" rows="5"></textarea>
+        <div class="footer2">
+          <button id="btnStartRecord" class="button">Comenzar Grabación</button>
+          <button id="btnStopRecord" class="button">Terminar Grabación</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="robot-container">
+          <img src="/app/static/img/LOGO.png" alt="Robot image">
+        </div>
+      </div>
     
-    <div class="center-column">
-      <div class="test-question">QUE INTERPRETA EN ESTA IMAGEN</div>
-      <div class="image-container">
-        <img src="https://placehold.co/688x461" alt="Test image description">
       </div>
-      <textarea id="texto" cols="30" rows="10"></textarea>
-      <div class="footer2">
-        <button id="btnStartRecord" class="button">Comenzar Grabación</button>
-        <button id="btnStopRecord" class="button">Terminar Grabación</button>
-        <button id="btnplayText" class="button">REPRODUCIR</button>
-      </div>
-      
-    </div>
-
-    <div class="right-column">
-      <div class="robot-container">
-        <img src="/app/static/img/LOGO.png" alt="Robot image">
+      <div class="footer">
+        <input type="button"   value="Continuar" onclick="animateContainer()">
+        <input type="button"   value="Regresar" > 
       </div>
     </div>
-  </div>
-</div>
-<div class="footer">
-  <input type="button"   value="Continuar" onclick="animateContainer()">
-  <input type="button"   value="Regresar" > 
-</div>
-
 </body>
 </html>
