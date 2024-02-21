@@ -25,7 +25,6 @@ body {
 .logimg {
     background-image: url('/app/static/img/LOGO.png');
     background-size: cover;
-   
     width: 341px;
     height: 467px;
     margin: 0;
