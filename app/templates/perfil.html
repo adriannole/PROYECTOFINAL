@@ -49,6 +49,26 @@
         .btn:hover {
             background-color: #0056b3;
         }
+        /* New styles for the split container */
+        .split-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .top-section {
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            border-radius: 5px 5px 0 0;
+            padding: 10px;
+        }
+        /* Adjusted height for the bottom section */
+        .bottom-section {
+            background-color: #f2f2f2;
+            border-radius: 0 0 5px 5px;
+            padding: 10px;
+            /* Half the height */
+            height: 60px;
+        }
     </style>
     <title>Perfil de Ana García</title>
 </head>
@@ -79,14 +99,26 @@
             <p><strong>Ubicación:</strong> Ciudad de México, México</p>
             <p><strong>Intereses:</strong> Psicología, desarrollo personal, tecnología</p>
         </div>
+        <!-- Split container for Test Preliminar -->
         <div class="subcontainer">
-            <p>TEST PRELIMINAR</p>
+            <div class="split-container">
+                <div class="top-section">
+                    <p>TEST PRELIMINAR</p>
+                </div>
+                <div class="bottom-section">
+                    <!-- Placeholder content for the bottom section -->
+                </div>
+            </div>
         </div>
         <div class="subcontainer">
             <p>DIAGNÓSTICO</p>
         </div>
         <div class="subcontainer">
             <p>DESTREZAS</p>
+        </div>
+        <div class="subcontainer">
+            <p>RESULTADOS DEL TEST DE PERSONALIDAD</p>
+            <img src="https://placehold.co/150x100" alt="Placeholder image for container image3">
         </div>
     </div>
 
@@ -105,10 +137,14 @@
 
 </div>
 
-<!-- RESULTADOS DEL TEST DE PERSONALIDAD moved to bottom -->
-<div class="subcontainer">
-    <p>RESULTADOS DEL TEST DE PERSONALIDAD</p>
-    <img src="https://placehold.co/150x100" alt="Placeholder image for container image3">
+<!-- New section for additional text -->
+<div class="main-container">
+    <!-- Left Column -->
+    <div class="column">
+        <div class="subcontainer">
+            <p>Texto adicional aquí</p>
+        </div>
+    </div>
 </div>
 
 <!-- Buttons at the bottom -->
