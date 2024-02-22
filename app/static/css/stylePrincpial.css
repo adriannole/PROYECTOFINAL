@@ -213,3 +213,11 @@ p {
   color: #d4d7de;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
 }
+
+
+/*RESPONSIVE FORM */ 
+@media screen and (max-width:750px) {
+  html {
+      font-size: 12px;
+  }
+}
