@@ -9,29 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     time++;
   }
 
-  setInterval(updateTimer, 1000);
-
-  var images = [
-    'https://placehold.co/688x461',
-    'https://placehold.co/600x400',
-    'https://placehold.co/500x300'
-  ];
-  var currentImageIndex = 0;
-
-  function changeImage() {
-    currentImageIndex++;
-    if (currentImageIndex >= images.length) {
-      currentImageIndex = 0;
-    }
-    var imageContainer = document.querySelector('.image-container img');
-    if (imageContainer) {
-      imageContainer.src = images[currentImageIndex];
-      // Aquí podrías llamar a una función de detección de emociones, pasándole la imagen actual como argumento
-      detectEmotion(images[currentImageIndex]);
-    } else {
-      console.error('Image container not found.');
-    }
-  }
+setInterval(updateTimer, 1000);
 
 // Función para iniciar la cámara web
 function startWebcam() {
@@ -65,21 +43,22 @@ function startWebcam() {
       });
 }
 
-
-  startWebcam();
-
+startWebcam();
   // Esquema básico para la función de detección de emociones
   // Deberás reemplazar esto con la integración de una biblioteca de reconocimiento de emociones real
-  function detectEmotion(imageUrl) {
+function detectEmotion(imageUrl) {
     // Imagina que esta función analiza la imagen y detecta emociones
     console.log(`Detecting emotion for image: ${imageUrl}`);
     // Aquí iría el código para invocar una API de reconocimiento de emociones o usar una biblioteca JS
     // Por ejemplo, podría actualizar algún elemento en la página con la emoción detectada.
-  }
+}
 
+//Botones de Voz a Texto 
   const btnStartRecord = document.getElementById('btnStartRecord');
   const btnStopRecord = document.getElementById('btnStopRecord');
   const texto = document.getElementById('texto');
+  let currentIndex = 0;
+  let firstChange = true;
   
   let recognition = new webkitSpeechRecognition();
   recognition.lang = 'es-MX'; // Cambiado el idioma a español latinoamericano
@@ -119,3 +98,80 @@ window.onload = function() {
     container.style.margin = '0 auto'; // Centra el contenedor
   };
 };
+
+//Funcion para leer el texto 
+document.addEventListener("DOMContentLoaded", function() {
+  const texts = document.querySelectorAll('.text');
+  let currentIndex = 0;
+  let firstChange = true;
+  
+  // Define tus URLs de imágenes aquí
+  var images = [
+    '/app/static/img/imgtest1-09.png',
+    '/app/static/img/imgtest2-09.png',
+    '/app/static/img/imgtest3-09.png',
+    '/app/static/img/imgtest4-09.png',
+    '/app/static/img/imgtest5-09.png',
+    '/app/static/img/imgtest6-09.png',
+    '/app/static/img/imgtest7-09.png',
+    '/app/static/img/imgtest8-09.png',
+    '/app/static/img/imgtest9-09.png',
+    '/app/static/img/imgtest10-09.png'
+  ];
+  var currentImageIndex = 0; // Índice de la imagen inicial
+
+// Configura la imagen inicial
+var imageContainer = document.querySelector('.image-container img');
+if(imageContainer) {
+  imageContainer.src = images[currentImageIndex]; // Establece la primera imagen
+}
+
+function showText(index) {
+  texts.forEach((text, i) => {
+    if (i === index) {
+      text.classList.add('active');
+      speakText(text.innerText); // Llama a la función para leer el texto en voz alta
+    } else {
+      text.classList.remove('active');
+    }
+  });
+}
+  
+  function toggleText() {
+    window.speechSynthesis.cancel(); // Detiene cualquier síntesis de voz actual antes de cambiar de texto
+    
+    if (firstChange) {
+      currentIndex++;
+      currentImageIndex++;
+      firstChange = false;
+    } else {
+      currentIndex = (currentIndex + 1) % texts.length;
+      currentImageIndex = (currentImageIndex + 1) % images.length; // Asegura un ciclo continuo de imágenes
+    }
+
+    showText(currentIndex);
+    changeImage();
+  }
+
+  function changeImage() {
+    if (imageContainer) {
+      imageContainer.src = images[currentImageIndex];
+    } else {
+      console.error('Image container not found.');
+    }
+  }
+  
+  // Función para leer el texto en voz alta
+  function speakText(text) {
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'es-ES'; // Establece el idioma del texto a español
+      window.speechSynthesis.speak(speech);
+  }
+  
+  // Mostrar el primer texto (y la imagen inicial) al cargar la página
+  showText(currentIndex);
+  
+  // Añadir event listener al botón para cambiar el texto y la imagen al hacer clic
+  const changeTextButton = document.getElementById('changeTextButton');
+  changeTextButton.addEventListener('click', toggleText);
+});
