@@ -127,7 +127,7 @@ p {
 .textarea-container {
   width: 688px;
   height: 135px;
-  margin: 20px auto; /* Ajusta el margen según lo desees */
+  margin: 5px auto; /* Ajusta el margen según lo desees */
 }
 
 #texto {
@@ -148,7 +148,7 @@ p {
   display: flex;
   justify-content: space-around;
   padding: 0 100px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .footer2 h2 {
