@@ -61,7 +61,10 @@
             border-radius: 5px 5px 0 0;
             padding: 10px;
         }
-        /* Adjusted height for the bottom section */
+        /* Adjusted height for the subcontainer above the chat bot */
+        .column:last-child .subcontainer:nth-last-child(2) {
+            height: 120px; /* Double the height */
+        }
         .bottom-section {
             background-color: #f2f2f2;
             border-radius: 0 0 5px 5px;
@@ -86,6 +89,10 @@
         </div>
         <div class="subcontainer">
             <p>ANEXOS</p>
+            <!-- Moved the bottom-section here -->
+            <div class="bottom-section">
+                <!-- Placeholder content for the bottom section -->
+            </div>
         </div>
     </div>
 
@@ -110,11 +117,27 @@
                 </div>
             </div>
         </div>
+        <!-- Split container for Diagnóstico -->
         <div class="subcontainer">
-            <p>DIAGNÓSTICO</p>
+            <div class="split-container">
+                <div class="top-section">
+                    <p>DIAGNÓSTICO</p>
+                </div>
+                <div class="bottom-section">
+                    <!-- Placeholder content for the bottom section -->
+                </div>
+            </div>
         </div>
+        <!-- Split container for Destrezas -->
         <div class="subcontainer">
-            <p>DESTREZAS</p>
+            <div class="split-container">
+                <div class="top-section">
+                    <p>DESTREZAS</p>
+                </div>
+                <div class="bottom-section">
+                    <!-- Placeholder content for the bottom section -->
+                </div>
+            </div>
         </div>
         <div class="subcontainer">
             <p>RESULTADOS DEL TEST DE PERSONALIDAD</p>
@@ -129,9 +152,6 @@
         </div>
         <div class="subcontainer">
             <p>CHAT BOT</p>
-        </div>
-        <div class="subcontainer">
-            <img src="https://placehold.co/150x100" alt="image DE LOGO">
         </div>
     </div>
 
