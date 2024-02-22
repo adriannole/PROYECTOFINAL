@@ -91,8 +91,19 @@ html, body {
 }
 
 .image-container img {
-  width: 688px;
-  height: 461px;
+  display: block; /* Asegura que la imagen no tenga margen blanco alrededor */
+  max-width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border: 2px solid #3b4a6b;
+  border-radius: 8px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+  /* El margen se ajustará dinámicamente con JavaScript */
 }
 
 .status {

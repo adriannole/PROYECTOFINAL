@@ -107,3 +107,15 @@ function startWebcam() {
   });
   
 });
+
+//Dynamica del contenido de la imagen
+window.onload = function() {
+  var img = document.getElementById('dynamicImage');
+  var container = img.parentElement;
+
+  img.onload = function() {
+    var width = img.offsetWidth;
+    container.style.width = width + 'px'; // Ajusta el ancho del contenedor al de la imagen
+    container.style.margin = '0 auto'; // Centra el contenedor
+  };
+};
