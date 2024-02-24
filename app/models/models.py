@@ -7,8 +7,9 @@ class Usuario:
         self.correo = correo
         self.contraseña = contraseña  # La contraseña se pasa aquí en texto plano y se hashea en agregar_usuario
 
-    def verificar_contraseña(self, contraseña_hash, contraseña):
-        return check_password_hash(contraseña_hash, contraseña)
+    def verificar_contraseña(self, contraseña_plana):
+         return check_password_hash(self.contraseña, contraseña_plana)
+
 
 def conectar_bd():
     return psycopg2.connect(
@@ -49,9 +50,18 @@ def obtener_usuario_por_correo(correo):
     usuario_data = cursor.fetchone()
     conn.close()
     if usuario_data:
-        # Aquí se devuelve un nuevo objeto Usuario incluyendo la contraseña hasheada
-        return Usuario(usuario_data[1], usuario_data[2], usuario_data[3])
+        usuario = Usuario(usuario_data[1], usuario_data[2], usuario_data[3])
+        usuario.id = usuario_data[0]  # Asigna el id después de la creación
+        return usuario
     return None
+
+def existe_usuario(correo):
+    conn = conectar_bd()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM usuarios WHERE correo = %s", (correo,))
+    existe = cursor.fetchone() is not None
+    conn.close()
+    return existe
 
 # Inicializar la base de datos al arrancar la aplicación
 inicializar_bd()

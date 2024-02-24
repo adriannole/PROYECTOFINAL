@@ -1,6 +1,5 @@
 
 
-
 * {
     padding: 0%;
     margin: 0%;
@@ -16,6 +15,26 @@ body {
     height: 100vh;
     background: linear-gradient(rgba(191, 224, 247, 0.863), rgb(145, 145, 145)), url('../img/fondo.jpg');
     background-size: cover;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.alert-success { background-color: #d4edda; color: #155724; border-color: #c3e6cb; }
+.alert-warning { background-color: #fff3cd; color: #856404; border-color: #ffeeba; }
+.alert-error { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+
+.flash-messages {
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    position: relative; /* O prueba con 'absolute' si es necesario */
+    width: 100%;
+    text-align: center;
+    margin-top: 20px; /* Ajusta según necesidad para que no esté demasiado pegado al top */
 }
 
 
