@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from models.models import Usuario, agregar_usuario, obtener_usuario_por_correo, existe_usuario
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 app.secret_key = 'tu_clave_secreta_aqui'
 
 @app.route('/')
@@ -32,20 +32,20 @@ def inicio_sesion():
         usuario = obtener_usuario_por_correo(correo)
         if usuario and usuario.verificar_contraseña(contraseña):
             session['usuario_logueado'] = usuario.correo
-            return redirect(url_for('perfil'))
+            return redirect(url_for('funcionamiento'))
         else:
             flash('Correo electrónico o contraseña incorrecta.', 'error')
             return redirect(url_for('index'))
     return redirect(url_for('index'))
 
-@app.route('/perfil')
-def perfil():
+@app.route('/funcionamiento')
+def funcionamiento():
     if 'usuario_logueado' not in session:
         flash('Por favor, inicie sesión para ver esta página.', 'warning')
         return redirect(url_for('index'))
     correo = session['usuario_logueado']
     usuario = obtener_usuario_por_correo(correo)
-    return render_template('perfil.html', usuario=usuario)
+    return render_template('funcionamiento.html', usuario=usuario)
 
 if __name__ == '__main__':
     app.run(debug=True)
