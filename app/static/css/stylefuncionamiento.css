@@ -14,7 +14,7 @@ body {
 }
 
 .img {
-    background-image: url('/app/static/img/TEXTC.png');
+    background-image: url('../img/TEXTC.png');
     background-size: cover;
     width: 206px;
     height: 125px;
@@ -23,7 +23,7 @@ body {
 }
 
 .logimg {
-    background-image: url('/app/static/img/Evain.gif');
+    background-image: url('../img/Evain.gif');
     background-size: cover;
     width: 460px;
     height: 467px;
