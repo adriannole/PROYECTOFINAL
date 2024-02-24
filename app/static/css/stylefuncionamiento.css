@@ -23,9 +23,9 @@ body {
 }
 
 .logimg {
-    background-image: url('/app/static/img/LOGO.png');
+    background-image: url('/app/static/img/Evain.gif');
     background-size: cover;
-    width: 341px;
+    width: 460px;
     height: 467px;
     margin: 0;
 }
