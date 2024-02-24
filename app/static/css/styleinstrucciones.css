@@ -14,10 +14,10 @@ body {
 	
 }
 .image-container {
-    background-image: url('/app/static/img/LOGO.png');
+    background-image: url('/app/static/img/Evain.gif');
     background-size: cover; /* o puedes usar 'contain' según tus necesidades */
 
-    width: 341px; /* Ancho deseado de la imagen */
+    width: 440px; /* Ancho deseado de la imagen */
     height: 467px; /* Alto deseado de la imagen */
     margin: 0; /* Eliminar márgenes */
     background-position: right 15px top; /* Mover la imagen hacia la derecha */
@@ -86,6 +86,3 @@ p {
     animation: fadeIn 1s ease forwards;
     opacity: 0; /* Inicialmente, el texto está oculto */
 }
-
-
-  
