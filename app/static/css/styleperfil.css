@@ -67,6 +67,16 @@ body {
   width: 186px;
   height: 73px;
 }
+.evasaludo-container {
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 37%; /* Asegúrate de que el contenedor tenga una altura para que funcione la alineación vertical */
+}
+.evasaludo-container img {
+  width: 250px;
+  height: 250px;
+}
 .containerizquierda, .containercenter, .containerderecha, .main-container {
   /* Aplica el alto desde la variable. Si necesitas diferentes altos, define y aplica variables separadas */
   height: var(--container-height);
