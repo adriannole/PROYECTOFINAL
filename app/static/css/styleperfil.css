@@ -14,17 +14,74 @@ body {
 }
 
   /* Main container styling */
-.main-container {
+  .main-container {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
+    flex-direction: column;
+    height: 94vh;
+    align-items: center;
+    justify-content: flex-start; /* Alinea elementos al principio */
+  }
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Divide en tres columnas */
+  grid-template-rows: 10% 80% 10%; /* Tres filas: contenido superior, fila central flexible, contenido inferior */
+  gap: 20px ; /* Espacio entre columnas y filas */
+  width: 100%;
+  padding: 20px;
+  align-items: start; /* Alinea el contenido al inicio de cada celda */
+  margin: 5px auto;
+}
+.header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; /* Full width to align logo to the right */
+  margin: 4px;
+  padding: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for aesthetics */
+}
+.test-title {
+  font-size: 30px;
+  display: flex;
+  justify-content: left;
+  width: 100%; /* Full width to use space effectively */
+  padding: 20px;
+}
+.logo-container img {
+  width: 186px;
+  height: 73px;
 }
 
+.containerizquierda {
+  grid-column: 1; /* Coloca en la primera columna */
+  grid-row: 1 / span 2; /* Extiende desde la primera fila a través de dos filas */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.containercenter {
+  grid-column: 2; /* Coloca en la segunda columna */
+  grid-row: 1; /* Coloca en la primera fila */
+}
+
+.containerderecha {
+  grid-column: 3; /* Coloca en la tercera columna */
+  grid-row: 1; /* Coloca en la tercera fila, es decir, debajo de las demás */
+}
+
+.left-column, .center-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px; /* Adds margin between columns */
+}
   /* Column styling */
 .column {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    height: 100%;
 }
 
   /* Left and Right columns */
@@ -39,12 +96,22 @@ body {
 
   /* Subcontainer styling */
 .subcontainer {
-    border: 1px solid black;
-    text-align: center;
-    padding: 20px;
-    background-color: white;
+  flex-grow: 1; /* Permite que cada subcontenedor crezca igualmente */
+  border: 2px solid #000; /* Hace el borde más grueso y visible */
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.subcontainer h3 {
+  margin-bottom: 10px; /* Espacio entre el título y el texto */
+}
+
+/*.subcontainer p {
+   /*Estilos adicionales para el texto si es necesario *
+}*/
   /* Last subcontainer in the right column */
 .subcontainer.last {
     background-color: #ccc;
@@ -70,4 +137,5 @@ body {
     cursor: pointer;
 }
 
-  /* Add any additional styles you need here */
+
+
