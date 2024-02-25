@@ -1,6 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify,make_response
+from flask_weasyprint import HTML, render_pdf
 from models.models import Usuario, agregar_usuario, obtener_usuario_por_correo, existe_usuario
 from pymongo import MongoClient
+import openai
+
 
 # Conexión a MongoDB
 client = MongoClient('mongodb://localhost:27017/')
