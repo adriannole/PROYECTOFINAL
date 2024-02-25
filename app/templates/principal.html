@@ -6,6 +6,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/app/static/css/stylePrincpial.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylePrincpial.css') }}">
+
+<script src="/app/static/js/scriptPrincipal.js"></script>   
+<script src="{{ url_for('static', filename='js/scriptPrincipal.js') }}"></script>
 
 <style>
   #texto {
@@ -14,20 +19,15 @@
 </style>
 <title>Interactive Layout</title>
 
-<link rel="stylesheet" href="/app/static/css/stylePrincpial.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/stylePrincpial.css') }}">
-
-<script src="/app/static/js/scriptPrincipal.js"></script>   
-<script src="{{ url_for('static', filename='js/scriptPrincipal.js') }}"></script>
 
 </head>
 
 <body>
   <div class="main-container">
     <div class="header">
-      <div class="test-title">TEST PERSONALIDAD</div>
+      <div class="test-title">TEST PERSONALIDADes</div>
       <div class="logo-container">
-        <img src="/app/static/img/TEXTC.png" alt="Logo image">
+        <img src="../static/img/TEXTC.png" alt="Logo image">
       </div>
     </div>
 
@@ -59,6 +59,7 @@
           <h2 id="text10" class="text">Pregunta10: ¿Qué observas en la imagen?.</h2>
         </div>
         <div class="image-container">
+          
           <img alt="Imagen Dinámica">
         </div>
         <div class="textarea-container">
@@ -73,7 +74,7 @@
 
       <div class="right-column">
         <div class="robot-container">
-          <img src="../img/EVA.gif" alt="Robot image">
+          <img src="../static/img/EVA.gif" alt="Robot image">
         </div>
       </div>
     
