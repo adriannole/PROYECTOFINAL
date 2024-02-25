@@ -5,19 +5,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const changeTextButton = document.getElementById('changeTextButton');
     let currentImageIndex = 0; // Índice de la imagen inicial
     
-   
     // Define tus URLs de imágenes aquí
     const images = [
         {id: "img1", src:'../static/img/imgtest1-09.png'},
-        {id: "img2", src:'https://placehold.co/689x462'},
-        {id: "img3", src:'https://placehold.co/690x463'},
-        {id: "img4", src:'/app/static/img/imgtest4-09.png'},
-        {id: "img5", src:'/app/static/img/imgtest5-09.png'},
-        {id: "img6", src:'/app/static/img/imgtest6-09.png'},
-        {id: "img7", src:'/app/static/img/imgtest7-09.png'},
-        {id: "img8", src:'/app/static/img/imgtest8-09.png'},
-        {id: "img9", src:'/app/static/img/imgtest9-09.png'},
-        {id: "img10", src:'/app/static/img/imgtest10-09.png'}
+        {id: "img2", src:'../static/img/imgtest2-09.png'},
+        {id: "img3", src:'../static/img/imgtest3-09.png'},
+        {id: "img4", src:'../static/img/imgtest4-09.png'},
+        {id: "img5", src:'../static/img/imgtest5-09.png'},
+        {id: "img6", src:'../static/img/imgtest6-09.png'},
+        {id: "img7", src:'../static/img/imgtest7-09.png'},
+        {id: "img8", src:'../static/img/imgtest8-09.png'},
+        {id: "img9", src:'../static/img/imgtest9-09.png'},
+        {id: "img10", src:'../static/img/imgtest10-09.png'}
     ];
 
     // Establece la imagen inicial
@@ -43,19 +42,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Muestra el primer texto
     textElements[0].style.display = 'block';
 
-     // Reproduce la voz del primer texto
-     speakText(textElements[0].textContent);
+    // Reproduce la voz del primer texto
+    speakText(textElements[0].textContent);
 
-   
     function updateTimer() {
         let minutes = Math.floor(time / 60).toString().padStart(2, '0');
         let seconds = (time % 60).toString().padStart(2, '0');
         timerElement.textContent = `${minutes}:${seconds}`;
         time++;
     }
-   
     setInterval(updateTimer, 1000);
-   
+
     function startWebcam() {
         // Implementación de la función para iniciar la cámara web
         const constraints = {
@@ -87,34 +84,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.error('Error accessing the webcam', error);
             });
     }
-   
+
     function detectEmotion(imageUrl) {
         // Implementación de la función para detectar emociones
     }
-   
+
     let recognition = new webkitSpeechRecognition();
     recognition.lang = 'es-MX';
     recognition.continuous = true;
     recognition.interimResults = false;
-   
     recognition.onresult = (event) => {
         const results = event.results;
         const frase = results[results.length - 1][0].transcript;
         textoElement.value += frase + ' '; // Añade un espacio después de cada frase
     };
-   
     recognition.onend = (event) => {
         console.log('El micro deja de escuchar');
     };
-   
     recognition.onerror = (event) => {
         console.error(event.error);
     };
-   
     document.getElementById('btnStartRecord').addEventListener('click', () => {
         recognition.start();
     });
-   
     document.getElementById('btnStopRecord').addEventListener('click', () => {
         recognition.stop();
     });
@@ -124,11 +116,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             speech.lang = 'es-ES'; // Establece el idioma del texto a español
         window.speechSynthesis.speak(speech);
     }
-    
-
-
-    
-   
     function changeImageAndText() {
         // Oculta el texto actual
         textElements[currentImageIndex].style.display = 'none';
@@ -148,13 +135,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Limpia el textarea
         textoElement.value = '';
     }
-   
     function sendData() {
         const data = {
             texto: textoElement.value,
             imagen_actual: images[currentImageIndex].id
         };
-   
         fetch('/guardar_respuesta', {
             method: 'POST',
             headers: {
@@ -173,9 +158,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.error('Error:', error);
         });
     }
-   
     changeTextButton.addEventListener('click', sendData);
-   
     // Inicializar webcam al cargar la página
     startWebcam();
 });
