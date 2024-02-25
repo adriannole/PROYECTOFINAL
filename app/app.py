@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from models.models import Usuario, agregar_usuario, obtener_usuario_por_correo, existe_usuario
 
+
+
+
+
 app = Flask(__name__, static_folder='static')
 app.secret_key = 'tu_clave_secreta_aqui'
 
