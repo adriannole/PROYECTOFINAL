@@ -15,7 +15,9 @@
 <title>Perfil</title>
 
 <link rel="stylesheet" href="/app/static/css/styleperfil.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styleperfil.css') }}">
 <script src="/app/static/js/scriptperfil.js"></script>   
+<script src="{{ url_for('static', filename='js/scriptperfil.js') }}"></script>
 </head>
 <body>
 
@@ -88,7 +90,9 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <button class="btn">DESCARGAR RESULTADOS</button>
+                    <a href="{{ url_for('descargar_resultados') }}" class="btn">DESCARGAR RESULTADOS</a>
+
+
                     <button class="btn">FINALIZAR</button>
                 </div>
         </div>    
