@@ -1,8 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from models.models import Usuario, agregar_usuario, obtener_usuario_por_correo, existe_usuario
-
-
-
+from models.mongoDb import db
 
 
 app = Flask(__name__, static_folder='static')
@@ -50,6 +48,19 @@ def funcionamiento():
     correo = session['usuario_logueado']
     usuario = obtener_usuario_por_correo(correo)
     return render_template('funcionamiento.html', usuario=usuario)
+
+
+@app.route('/guardar_respuesta', methods=['POST'])
+def guardar_respuesta():
+    data = request.get_json()
+    texto = data['texto']
+    imagen_actual = data['imagen_actual']
+    db.respuestas.insert_one({
+        'etiqueta': imagen_actual,
+        'texto': texto
+    })
+    return jsonify({"mensaje": "Guardado exitosamente"})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
