@@ -15,7 +15,11 @@
 <title>Interactive Layout</title>
 
 <link rel="stylesheet" href="/app/static/css/stylePrincpial.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylePrincpial.css') }}">
+
 <script src="/app/static/js/scriptPrincipal.js"></script>   
+<script src="{{ url_for('static', filename='js/scriptPrincipal.js') }}"></script>
+
 </head>
 
 <body>
@@ -69,7 +73,7 @@
 
       <div class="right-column">
         <div class="robot-container">
-          <img src="/app/static/img/EVA.gif" alt="Robot image">
+          <img src="../img/EVA.gif" alt="Robot image">
         </div>
       </div>
     

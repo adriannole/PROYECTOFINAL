@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from models.models import Usuario, agregar_usuario, obtener_usuario_por_correo, existe_usuario
-from models.mongoDb import db
+from pymongo import MongoClient
+
+# Conexión a MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+db = client['C']  # Cambia al nombre de tu BD
+
 
 
 app = Flask(__name__, static_folder='static')
@@ -49,6 +54,9 @@ def funcionamiento():
     usuario = obtener_usuario_por_correo(correo)
     return render_template('funcionamiento.html', usuario=usuario)
 
+@app.route('/principal')
+def principal():
+    return render_template('principal.html')
 
 @app.route('/guardar_respuesta', methods=['POST'])
 def guardar_respuesta():
@@ -60,6 +68,8 @@ def guardar_respuesta():
         'texto': texto
     })
     return jsonify({"mensaje": "Guardado exitosamente"})
+
+
 
 
 if __name__ == '__main__':

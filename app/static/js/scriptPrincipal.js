@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Define tus URLs de imágenes aquí
   const images = [
-      {id: "img1", src:'/app/static/img/imgtest1-09.png'},
+      {id: "img1", src:'../img/imgtest1-09.png'},
       {id: "img2", src:'/app/static/img/imgtest2-09.png'},
       {id: "img3", src:'/app/static/img/imgtest3-09.png'},
       {id: "img4", src:'/app/static/img/imgtest4-09.png'},
