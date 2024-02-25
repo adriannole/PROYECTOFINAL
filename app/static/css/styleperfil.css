@@ -10,7 +10,7 @@ body {
     justify-content: center;
     height: 100vh;
     height: 100vh;
-    background: linear-gradient(rgba(191, 224, 247, 0.863), rgb(145, 145, 145)), url('../img/fondo.jpg');
+    background: linear-gradient(rgba(247, 252, 255, 0.863), rgb(221, 255, 255)), url('../img/fondo.jpg');
     background-size: cover;
 }
 :root {
