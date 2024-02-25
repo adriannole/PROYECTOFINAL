@@ -1,41 +1,35 @@
 document.addEventListener("DOMContentLoaded", function() {
-const texts = document.querySelectorAll('.text');
-let currentIndex = 0;
-let firstChange = true;
+    const texts = document.querySelectorAll('.text');
+    let currentIndex = 0;
 
-function showText(index) {
-    texts.forEach((text, i) => {
-        if (i === index) {
-            text.classList.add('active');
-              speakText(text.innerText); // Llama a la función para leer el texto en voz alta
-        } else {
+    function showText(index) {
+        texts.forEach((text) => {
             text.classList.remove('active');
-        }
-    });
-}
-
-function toggleText() {
-    if (firstChange) {
-        currentIndex++;
-        firstChange = false;
-    } else {
-        currentIndex = (currentIndex + 1) % texts.length;
+        });
+        texts[index].classList.add('active');
+        speakText(texts[index].innerText);
     }
-    showText(currentIndex);
-}
 
-  // Función para leer el texto en voz alta
-function speakText(text) {
-    const speech = new SpeechSynthesisUtterance(text);
+    function toggleText() {
+        // Incrementa currentIndex solo si no se ha alcanzado el último texto
+        if (currentIndex < texts.length - 1) {
+            currentIndex++;
+            showText(currentIndex);
+        } else {
+            // Si ya se mostró el último texto, no hace nada para detener el ciclo
+            console.log("Último texto leído");
+        }
+    }
+
+    function speakText(text) {
+        const speech = new SpeechSynthesisUtterance(text);
         speech.lang = 'es-ES'; // Establece el idioma del texto a español
-    window.speechSynthesis.speak(speech);
-}
+        speech.onend = function(event) {
+            toggleText(); // Cambia al siguiente texto una vez que termine de leer el actual
+        };
+        window.speechSynthesis.speak(speech);
+    }
 
-  // Mostrar el primer texto al cargar la página
-showText(currentIndex);
-
-  // Cambiar automáticamente el texto cada 5 segundos después del primer cambio
-setInterval(() => {
-    toggleText();
-}, 5000);
+    // Inicialmente mostrar el primer texto
+    showText(currentIndex);
 });

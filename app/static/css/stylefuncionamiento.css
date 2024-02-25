@@ -9,7 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(rgba(191, 224, 247, 0.863), rgb(145, 145, 145)), url('../img/fondo.jpg');
+    background: linear-gradient(rgba(191, 224, 247, 0.863), rgb(194, 192, 192)), url('../img/fondo.jpg');
     background-size: cover;
 }
 
